@@ -76,7 +76,7 @@ function turtle(inString, clr, p) {
 
   let instrarr = inString.split(""); // split into an arry
   //print(instrarr)
-  let sz = 500;
+  let sz = height/2.8;
   let x = p;
   let y = height;
   // let  x1= x+sz*cos(ang)  // x1 = x + amount * cos (theta)
