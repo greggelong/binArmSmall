@@ -1,11 +1,11 @@
 let turn = 3; // when turn gets to 60 the next count is done
-let shrink = 0.71; // 0.61
+let shrink = 0.6; // 0.61
 let swept = false;
 let ang = 90;
 //let ang;
 // ang is local \
 // tun is global
-let count = 8;
+let count = 16;
 let armback = false;
 
 function setup() {
@@ -20,8 +20,8 @@ function setup() {
 function draw() {
   background(0);
 
-  doTree(width / 4, count, 2);
-  doArm(width - width / 3.5, count, 2);
+  doTree(width / 2, count, 2);
+  //doArm(width - width / 3.5, count, 2);
   if (!armback) {
     turn += 1;
   } else {
@@ -38,8 +38,8 @@ function draw() {
     count++;
   }
 
-  if (count > 15) {
-    count = 8;
+  if (count > 31) {
+    count = 16;
   }
 }
 
@@ -76,7 +76,7 @@ function turtle(inString, clr, p) {
 
   let instrarr = inString.split(""); // split into an arry
   //print(instrarr)
-  let sz = 150;
+  let sz = 500;
   let x = p;
   let y = height;
   // let  x1= x+sz*cos(ang)  // x1 = x + amount * cos (theta)
@@ -108,6 +108,7 @@ function turtle(inString, clr, p) {
     }
     // move forward/
     sz = sz * shrink;
+    print(sz)
     x1 = x + sz * cos(ang); // x1 = x + amount * cos (theta)
     y1 = y - sz * sin(ang); // y1 =y + amount * sin (theta)
     strokeWeight(sz / 9);
